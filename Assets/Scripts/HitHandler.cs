@@ -1,16 +1,22 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
 public class HitHandler : MonoBehaviour
 {
+    public GameObject _initialObject;
+    public Transform _position;
+    
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log(message:$"{gameObject.name} collided with {other.gameObject.name}");
-        Destroy(gameObject);
-        
-        //Debug.Log(message:$"{gameObject.name} collided with {other.gameObject.name}");
-        //DestroyImmediate(gameObject);
+        //Destroy(gameObject);
+
+        //var go = Instantiate(_initialObject, _position);
+        //go.SetActive(true);
+
+        Instantiate(Resources.Load("CubeBase"));
+
     }
 }
